@@ -19,7 +19,10 @@ node("ci-node"){
     //}
 
     stage("Build Jar file"){
-		sh "./mvnw package -DskipTests"
+		steps{
+			sh 'chmod +x mvnw'
+        	sh './mvnw package -DskipTests'
+    	}
     }
 
     stage("Build Docker Image"){
