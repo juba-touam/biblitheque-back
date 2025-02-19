@@ -19,11 +19,11 @@ node("ci-node"){
     //}
 
     stage("Build Jar file"){
-		steps{
+
 			sh 'chmod +x mvnw'
         	sh './mvnw package -DskipTests'
     	}
-    }
+
 
     stage("Build Docker Image"){
 		sh "sudo docker build -t mchekini/bibliotheque-api:$GIT_COMMIT_HASH ."
