@@ -20,6 +20,7 @@ public class Book {
     private String author;
     private Integer publicationYear;
     private Boolean available;
+    private String isbn;
     @OneToMany(mappedBy = "book",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Loan> loans;
 }
